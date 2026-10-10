@@ -891,7 +891,7 @@ ${m}`}class Ae extends Error{constructor({message:t,code:r,cause:n,name:s}){var 
   text-align: center;
   color: var(--color-brand-600, #4f46e5);
   font-weight: 500;
-`;function DP(){const[e,t]=C.useState(""),[r,n]=C.useState(""),[s,i]=C.useState(null),[o,a]=C.useState(""),[l,u]=C.useState(null),c=C.useRef(null);C.useEffect(()=>{hr.auth.getSession().then(({data:{session:g}})=>{i(g)});const{data:{subscription:p}}=hr.auth.onAuthStateChange((g,v)=>{i(v)});return()=>p.unsubscribe()},[]);async function d(p){var v;p.preventDefault(),a("");const{error:g}=await hr.auth.signInWithPassword({email:e,password:r,options:{captchaToken:l}});(v=c.current)==null||v.resetCaptcha(),u(null),g?a(`Login failed: ${g.message}`):(a("Successfully logged in!"),t(""),n(""))}async function h(){a("");const{error:p}=await hr.auth.signOut();a(p?`Logout failed: ${p.message}`:"Successfully logged out!")}return S.jsx(OP,{children:S.jsxs(PP,{children:[s?S.jsxs(IP,{children:[S.jsxs($P,{children:["Logged in as: ",S.jsx("strong",{children:s.user.email})]}),S.jsx(NP,{type:"button",onClick:h,children:"Log out"})]}):S.jsxs(AP,{onSubmit:d,children:[S.jsx(jP,{children:"Log in to your account"}),S.jsx(Wg,{type:"email",placeholder:"Email address",value:e,onChange:p=>t(p.target.value),required:!0}),S.jsx(Wg,{type:"password",placeholder:"Password",value:r,onChange:p=>n(p.target.value),required:!0}),S.jsx(TP,{sitekey:"4a96758a-c386-4892-ba30-77f07a22129e",onVerify:u,ref:c}),S.jsx(dw,{type:"submit",disabled:!l,children:"Log in"})]}),o&&S.jsx(LP,{children:o})]})})}function UP(){const e=vh();return()=>e(-1)}const FP=G.main`
+`;function DP(){const[e,t]=C.useState(""),[r,n]=C.useState(""),[s,i]=C.useState(null),[o,a]=C.useState(""),[l,u]=C.useState(null),c=C.useRef(null);C.useEffect(()=>{hr.auth.getSession().then(({data:{session:g}})=>{i(g)});const{data:{subscription:p}}=hr.auth.onAuthStateChange((g,v)=>{i(v)});return()=>p.unsubscribe()},[]);async function d(p){var v;p.preventDefault(),a("");const{error:g}=await hr.auth.signInWithPassword({email:e,password:r,options:{captchaToken:l}});(v=c.current)==null||v.resetCaptcha(),u(null),g?a(`Login failed: ${g.message}`):(a("Successfully logged in!"),t(""),n(""))}async function h(){a("");const{error:p}=await hr.auth.signOut();a(p?`Logout failed: ${p.message}`:"Successfully logged out!")}return S.jsx(OP,{children:S.jsxs(PP,{children:[s?S.jsxs(IP,{children:[S.jsx($P,{children:S.jsx("strong",{children:"Logged in"})}),S.jsx(NP,{type:"button",onClick:h,children:"Log out"})]}):S.jsxs(AP,{onSubmit:d,children:[S.jsx(jP,{children:"Log in to your account"}),S.jsx(Wg,{type:"email",placeholder:"Email address",value:e,onChange:p=>t(p.target.value),required:!0}),S.jsx(Wg,{type:"password",placeholder:"Password",value:r,onChange:p=>n(p.target.value),required:!0}),S.jsx(TP,{sitekey:"4a96758a-c386-4892-ba30-77f07a22129e",onVerify:u,ref:c}),S.jsx(dw,{type:"submit",disabled:!l,children:"Log in"})]}),o&&S.jsx(LP,{children:o})]})})}function UP(){const e=vh();return()=>e(-1)}const FP=G.main`
   height: 100vh;
   background-color: var(--color-grey-50);
   display: flex;
@@ -911,12 +911,12 @@ ${m}`}class Ae extends Error{constructor({message:t,code:r,cause:n,name:s}){var 
   & h1 {
     margin-bottom: 3.2rem;
   }
-`;function BP(){const e=UP();return S.jsx(FP,{children:S.jsxs(MP,{children:[S.jsx(gr,{as:"h1",children:"The page you are looking for could not be found 😢"}),S.jsx("button",{onClick:e,size:"large",children:"← Go back"})]})})}const zP=G.div`
+`;function BP(){const e=UP();return S.jsx(FP,{children:S.jsxs(MP,{children:[S.jsx(gr,{as:"h1",children:"The page you are looking for could not be found 😢"}),S.jsx("button",{onClick:e,size:"large",children:"← Go back"})]})})}const zP="/wo-internal-staff-portal/assets/logo-light-d13f5e0a.png",VP=G.div`
   text-align: center;
-`,VP=G.img`
+`,HP=G.img`
   height: 9.6rem;
   width: auto;
-`;function HP(){return S.jsx(zP,{children:S.jsx(VP,{src:"/logo-light.png",alt:"Logo"})})}const qP=G.ul`
+`;function qP(){return S.jsx(VP,{children:S.jsx(HP,{src:zP,alt:"Logo"})})}const WP=G.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -957,7 +957,7 @@ ${m}`}class Ae extends Error{constructor({message:t,code:r,cause:n,name:s}){var 
   &.active:visited svg {
     color: var(--color-brand-600);
   }
-`;function WP(){return S.jsx("nav",{children:S.jsxs(qP,{children:[S.jsx("li",{children:S.jsxs(di,{to:"/dashboard",children:[S.jsx(Ok,{}),S.jsx("span",{children:" Home"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/bookings",children:[S.jsx(jk,{}),S.jsx("span",{children:"Bookings"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/cabins",children:[S.jsx(Pk,{}),S.jsx("span",{children:"Cabins"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/users",children:[S.jsx(Tk,{}),S.jsx("span",{children:"Users"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/settings",children:[S.jsx(Ak,{}),S.jsx("span",{children:"Settings"})]})})]})})}const KP=G.aside`
+`;function KP(){return S.jsx("nav",{children:S.jsxs(WP,{children:[S.jsx("li",{children:S.jsxs(di,{to:"/dashboard",children:[S.jsx(Ok,{}),S.jsx("span",{children:" Home"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/bookings",children:[S.jsx(jk,{}),S.jsx("span",{children:"Bookings"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/cabins",children:[S.jsx(Pk,{}),S.jsx("span",{children:"Cabins"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/users",children:[S.jsx(Tk,{}),S.jsx("span",{children:"Users"})]})}),S.jsx("li",{children:S.jsxs(di,{to:"/settings",children:[S.jsx(Ak,{}),S.jsx("span",{children:"Settings"})]})})]})})}const GP=G.aside`
   background-color: var(--color-grey-0);
   padding: 3.2rem 2.4rem;
   border-right: 1px solid var(--color-grey-100);
@@ -966,23 +966,23 @@ ${m}`}class Ae extends Error{constructor({message:t,code:r,cause:n,name:s}){var 
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-`;function GP(){return S.jsxs(KP,{children:[S.jsx(HP,{}),S.jsx(WP,{})]})}const QP=G.header`
+`;function QP(){return S.jsxs(GP,{children:[S.jsx(qP,{}),S.jsx(KP,{})]})}const JP=G.header`
   background-color: var(--color-grey-0);
   padding: 1.2rem 4.8rem;
   border-bottom: 1px solid var(--color-grey-100);
-`;function JP(){return S.jsx(QP,{children:"HEADER"})}const YP=G.div`
+`;function YP(){return S.jsx(JP,{children:"HEADER"})}const XP=G.div`
   display: grid;
   grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
-`,XP=G.main`
+`,ZP=G.main`
   background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
   overflow: scroll;
-`,ZP=G.div`
+`,eA=G.div`
   max-width: 120rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-`;function eA(){return S.jsxs(YP,{children:[S.jsx(JP,{}),S.jsx(GP,{}),S.jsx(XP,{children:S.jsx(ZP,{children:S.jsx(Ub,{})})})]})}const tA=function(){return null},rA=new OE({defaultOptions:{queries:{staleTime:0}}});function nA(){return S.jsxs(HE,{client:rA,children:[S.jsx(tA,{initialIsOpen:!1}),S.jsx(hk,{}),S.jsxs(Gb,{children:[" ",S.jsxs(Mb,{children:[S.jsxs(Bt,{element:S.jsx(eA,{}),children:[S.jsx(Bt,{index:!0,element:S.jsx(Db,{replace:!0,to:"dashboard"})}),S.jsx(Bt,{path:"dashboard",element:S.jsx(fk,{})}),S.jsx(Bt,{path:"bookings",element:S.jsx(pk,{})}),S.jsx(Bt,{path:"cabins",element:S.jsx(MO,{})}),S.jsx(Bt,{path:"users",element:S.jsx(BO,{})}),S.jsx(Bt,{path:"settings",element:S.jsx(KO,{})}),S.jsx(Bt,{path:"account",element:S.jsx(GO,{})})]}),S.jsx(Bt,{path:"login",element:S.jsx(DP,{})}),S.jsx(Bt,{path:"*",element:S.jsx(BP,{})})]})]}),S.jsx(qx,{position:"top-center",gutter:12,containerStyle:{margin:"8px"},toastOptions:{success:{duration:3e3},error:{duration:5e3},style:{fontSize:"16px",maxWidth:"500",padding:"16px 24px",backgroundColor:"var(--color-grey-0)",color:"var(--color-grey-700)"}}})]})}Qu.createRoot(document.getElementById("root")).render(S.jsx(Y.StrictMode,{children:S.jsx(nA,{})}));
+`;function tA(){return S.jsxs(XP,{children:[S.jsx(YP,{}),S.jsx(QP,{}),S.jsx(ZP,{children:S.jsx(eA,{children:S.jsx(Ub,{})})})]})}const rA=function(){return null},nA=new OE({defaultOptions:{queries:{staleTime:0}}});function sA(){return S.jsxs(HE,{client:nA,children:[S.jsx(rA,{initialIsOpen:!1}),S.jsx(hk,{}),S.jsxs(Gb,{children:[" ",S.jsxs(Mb,{children:[S.jsxs(Bt,{element:S.jsx(tA,{}),children:[S.jsx(Bt,{index:!0,element:S.jsx(Db,{replace:!0,to:"dashboard"})}),S.jsx(Bt,{path:"dashboard",element:S.jsx(fk,{})}),S.jsx(Bt,{path:"bookings",element:S.jsx(pk,{})}),S.jsx(Bt,{path:"cabins",element:S.jsx(MO,{})}),S.jsx(Bt,{path:"users",element:S.jsx(BO,{})}),S.jsx(Bt,{path:"settings",element:S.jsx(KO,{})}),S.jsx(Bt,{path:"account",element:S.jsx(GO,{})})]}),S.jsx(Bt,{path:"login",element:S.jsx(DP,{})}),S.jsx(Bt,{path:"*",element:S.jsx(BP,{})})]})]}),S.jsx(qx,{position:"top-center",gutter:12,containerStyle:{margin:"8px"},toastOptions:{success:{duration:3e3},error:{duration:5e3},style:{fontSize:"16px",maxWidth:"500",padding:"16px 24px",backgroundColor:"var(--color-grey-0)",color:"var(--color-grey-700)"}}})]})}Qu.createRoot(document.getElementById("root")).render(S.jsx(Y.StrictMode,{children:S.jsx(sA,{})}));
