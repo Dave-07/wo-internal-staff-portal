@@ -28,7 +28,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
-      <HashRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         {" "}
         <Routes>
           <Route element={<AppLayout />}>
