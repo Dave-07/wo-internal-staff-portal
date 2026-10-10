@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import supabase from "../services/supabase";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const LoginLayout = styled.main`
   min-height: 100vh;
@@ -113,6 +114,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [session, setSession] = useState(null);
   const [message, setMessage] = useState("");
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const captchaRef = useRef(null);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -135,7 +138,11 @@ export default function Login() {
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
+      options: { captchaToken },
     });
+
+    captchaRef.current?.resetCaptcha();
+    setCaptchaToken(null);
 
     if (error) {
       setMessage(`Login failed: ${error.message}`);
@@ -164,7 +171,7 @@ export default function Login() {
           // log in
           <LoggedInView>
             <StatusText>
-              Logged in as: <strong>{session.user.email}</strong>
+              <strong>Logged in</strong>
             </StatusText>
             <ButtonSecondary type="button" onClick={handleLogout}>
               Log out
@@ -188,7 +195,14 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <Button type="submit">Log in</Button>
+            <HCaptcha
+              sitekey="4a96758a-c386-4892-ba30-77f07a22129e"
+              onVerify={setCaptchaToken}
+              ref={captchaRef}
+            />
+            <Button type="submit" disabled={!captchaToken}>
+              Log in
+            </Button>
           </Form>
         )}
 
