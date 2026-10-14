@@ -34,3 +34,27 @@ const FilterButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
+
+export default function Filter({ filterField, options }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const currentFilter = searchParams.get(filterField) || options.at(0).value;
+
+  function handleClick(val) {
+    searchParams.set(filterField, val);
+    setSearchParams(searchParams);
+  }
+
+  return (
+    <StyledFilter>
+      {options.map((option) => (
+        <FilterButton
+          key={option.value}
+          $active={option.value === currentFilter}
+          onClick={() => handleClick(option.value)}
+        >
+          {option.label}
+        </FilterButton>
+      ))}
+    </StyledFilter>
+  );
+}
